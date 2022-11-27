@@ -23,8 +23,8 @@ public class DBUtils {
     //传一本书进来，写进数据库
     public static void SaveBook(Book book) throws SQLException{
         //Book对象转成sql语句，把数据写入数据库
-        String template = "INSERT TO book(\"name\",author,price,\"describe\")VALUES('%s','%s',%s,'%s')";
-                                                    //在数据库中用'%s'表示字符串，int类型不加引号
+        String template = "INSERT INTO `book`(`name`, `author`, `price`, `describe`) " +
+                "VALUES ('%s', '%s', %s, '%s')";//数据库的字段和名字加``以避免被当做关键字
         //获得链接对象
         try(Connection connection = getConnnection()) {
             try(Statement statement = connection.createStatement()){
