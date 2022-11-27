@@ -34,5 +34,34 @@ public class DBUtils {
         }
         }
     }
-    
+    //获取图书信息
+    public static  List<Book> getAllBook() throws SQLException {
+        String sql = "SELECT * FORM book";
+        try (Connection connection =getConnnection()){//创建链接对象
+            try(Statement statement = connection.createStatement()){
+                try(ResultSet resultSet = statement.executeQuery(sql)){//查询数据库保存在数据集
+                    List<Book> books = new ArrayList<>();//接收数据
+                    while(resultSet.next()){//存在下一条
+                        long id = resultSet.getLong("id");
+                        String name = resultSet.getString("name");
+                        String author = resultSet.getString("author");
+                        float price = resultSet.getFloat("price");
+                        String describe = resultSet.getString("describe");
+
+                        Book book = new Book();//封装
+                        book.setName(name);
+                        book.setAuthor(author);
+                        book.setPrice(Float.valueOf(price));
+                        book.setDescribe(describe);
+
+                        books.add(book);
+                    }
+                    return books;
+                }
+            }
+
+        }
+
+    }
+
 }
