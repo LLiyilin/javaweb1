@@ -17,7 +17,7 @@ public class DBUtils {
         }
         //获得connection对象
         Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/book","root","123456");
+                "jdbc:mysql://localhost:3306/book","root","529485");
         return  connection;//得到一个数据库连接
     }
     //传一本书进来，写进数据库
