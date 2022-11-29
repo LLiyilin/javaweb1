@@ -4,6 +4,7 @@ public class User {
     private String id;
     private String name;
     private String user;//登陆系统的用户名
+    private String password;
 
     public String getId() {
         return id;
@@ -37,6 +38,5 @@ public class User {
         this.password = password;
     }
 
-    private String password;
 
 }

@@ -1,5 +1,6 @@
 package cn.edu.swu.db;
 
+import cn.edu.swu.book.Book;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import java.sql.Connection;
@@ -46,13 +47,13 @@ public class DBEngine {
     }
 
     //查
-    public <T> List<T> query(String sql, RecordVisitor<T> visitor) throws SQLException {
+    public <T> List<T> query(String sql, RecordVisitor<Book> visitor) throws SQLException {
         List<T> result = new ArrayList<>();
         try (Connection connection = this.getDataSource().getConnection()) {
             try(Statement statement = connection.createStatement()) {
                 try (ResultSet resultSet = statement.executeQuery(sql)) {
                     while(resultSet.next()) {
-                        T obj = visitor.visit(resultSet);
+                        T obj = (T) visitor.visit(resultSet);
                         result.add(obj);
                     }
                 }
@@ -60,6 +61,7 @@ public class DBEngine {
         }
         return result;
     }
+
 
 }
 

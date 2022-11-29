@@ -1,7 +1,6 @@
 package cn.edu.swu.db;
 
 import cn.edu.swu.book.Book;
-import cn.edu.swu.user.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -37,6 +36,5 @@ public class DBTest {
             System.out.println(String.format("%s, %s, %s, %s, %s",
                     book.getId(),book.getName(),book.getAuthor(),book.getPrice(),book.getDescribe()));
         }
-        
     }
 }

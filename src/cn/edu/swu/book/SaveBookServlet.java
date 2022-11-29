@@ -14,6 +14,7 @@ public class SaveBookServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String id = request.getParameter("id");
         String name = request.getParameter("name");
         String author = request.getParameter("author");
         String price = request.getParameter("price");
@@ -25,6 +26,11 @@ public class SaveBookServlet extends HttpServlet {
         book.setPrice(Float.valueOf(price));
         book.setDescribe(describe);
         //封装成book对象
+        if (id != null) {
+            book.setId(Long.valueOf(id));
+        }
+
+
         System.out.println(String.format("%s, %s, %s, %s", name, author, price, describe));
         String message =null;
         //保存到数据库
