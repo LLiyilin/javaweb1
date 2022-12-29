@@ -109,7 +109,7 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: start;
-    margin-top: 5px;
+    margin-top: 20px;
 }
 .box .btn-box div button{
     width: 115px;
@@ -123,7 +123,7 @@ body{
 .box .btn-box div button:nth-of-type(2){
     margin-left: 20px;
 }
-.box .btn-box div button:hover{
+.box .btn-box div button:hover {
     border: 1px solid rgba(248, 108, 76, 0.8);
     background: rgba(248, 108, 76, 0.5);
 }

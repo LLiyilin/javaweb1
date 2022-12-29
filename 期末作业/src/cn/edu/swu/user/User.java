@@ -3,11 +3,7 @@ package cn.edu.swu.user;
 public class User {
     private String id;
     private String name;
-<<<<<<< HEAD
-    private String user;//登陆系统的用户名
-=======
     private String user;
->>>>>>> ff52b43 (期末修改2)
     private String password;
 
     public String getId() {
@@ -41,9 +37,4 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ff52b43 (期末修改2)
 }

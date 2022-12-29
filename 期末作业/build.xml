@@ -9,7 +9,7 @@
         <property name="build.dir" value="./out/production/myapp" />
         <property name="dist.dir" value="./dist" />
         <property name="lib.dir" value="${web.dir}/WEB-INF/lib" />
-        <property name="tomcat.dir" value="E:\java\apache-tomcat-10.0.27" />
+        <property name="tomcat.dir" value="D:\apache-tomcat-8.5.76" />
     </target>
 
     <path id="classpath">

@@ -1,19 +1,11 @@
 package cn.edu.swu.user;
 
 import com.mysql.cj.Session;
-<<<<<<< HEAD
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-=======
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
->>>>>>> ff52b43 (期末修改2)
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -23,18 +15,12 @@ public class LoginServlet extends HttpServlet {
 
     public final static String LOGIN_TOKEN = "USER_LOGIN_TOKEN";
 
-<<<<<<< HEAD
-=======
     @Override
->>>>>>> ff52b43 (期末修改2)
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         this.doPost(request, response);
     }
 
-<<<<<<< HEAD
-=======
     @Override
->>>>>>> ff52b43 (期末修改2)
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String userName = request.getParameter("user");
         String password = request.getParameter("password");
@@ -46,26 +32,11 @@ public class LoginServlet extends HttpServlet {
             if (session == null || session.getAttribute(LoginServlet.LOGIN_TOKEN) != Boolean.TRUE) {
                 response.sendRedirect("./login.html");
             } else {
-                response.sendRedirect("./admin.html");
+                response.sendRedirect("./index.html");
             }
         }
     }
 
-<<<<<<< HEAD
-    private void doLogin(HttpServletRequest request, HttpServletResponse response) {
-        String userName = request.getParameter("user");
-        String password = request.getParameter("password");
-        try {
-            User user = UserRepo.getInstance().auth(userName, password);
-            if (user != null) {
-                HttpSession session = request.getSession(true);
-                session.setAttribute(LOGIN_TOKEN, Boolean.TRUE);
-                response.sendRedirect("./admin.html");
-            } else {
-                response.sendRedirect("./index.html");
-            }
-        } catch (SQLException | IOException e) {
-=======
     private void doLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String userName = request.getParameter("user");
         String password = request.getParameter("password");
@@ -84,18 +55,13 @@ public class LoginServlet extends HttpServlet {
                 System.out.println("用户名密码正确");
                 HttpSession session = request.getSession();
                 session.setAttribute(LOGIN_TOKEN, Boolean.TRUE);
-                response.sendRedirect("./admin.html");
+                response.sendRedirect("./index.html");
             } else {
                 response.sendRedirect("./login.html");
             }
         } catch (SQLException e) {
->>>>>>> ff52b43 (期末修改2)
             throw new RuntimeException(e);
         }
     }
 
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> ff52b43 (期末修改2)

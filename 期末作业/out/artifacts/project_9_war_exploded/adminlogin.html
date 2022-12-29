@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>用户：admin 密码：123456</title>
+</head>
+<body>
+<div class="box">
+    <h2>Admin Login</h2>
+    <form action="./admin-login" method="post">
+        <div class="input-box">
+            <label for="">用 户：</label>
+            <input type="text" name="user" value="admin">
+        </div>
+        <div class="input-box">
+            <label for="">密码：</label>
+            <input type="password" name="password" value="swu.edu.cn">
+        </div>
+        <div class="input-box">
+            <label for="">验证：</label>
+            <input type="text" name="code" autocomplete="off"><br>
+            <img src="./verifyCode"/>
+        </div>
+        <div class="btn-box">
+            <div>
+                <button onclick="window.location.href('admin.html')"> <a href="admin.html">登录</a></button>
+            </div>
+        </div>
+    </form>
+</div>

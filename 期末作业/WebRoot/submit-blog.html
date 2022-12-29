@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>发布博客</title>
+  <style>
+    a{color: #EEEEEE}
+    a:hover{color: #EEEEEE}
+    a:valid{color: #EEEEEE}
+    a{text-decoration: none;}
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      /* 页面的透明图 0-1 */
+      opacity: 0.8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      /* 页面的背景图片，可以修改 */
+      background:url(img/7.jpg) ;
+      background-size: cover;
+
+    }
+    .box{
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 630px;
+      width: 450px;
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      border-left: 1px solid rgba(255, 255, 255, 0.5);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .box h2{
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 20px;
+    }
+    .box .input-box{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      margin-bottom: 5px;
+      align-items: center;
+    }
+    .box .input-box input{
+      box-sizing: border-box;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      height: 25px;
+      width: 100px;
+      background:rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
+      transition: 0.2s;
+      outline: none;
+      padding: 0 10px;
+      letter-spacing: 1px;
+    }
+    .box .input-box input:focus{
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+  </style>
+</head>
+<body>
+<div class="box" style="color: #EEEEEE">
+  <h2>发布博客</h2>
+  <form action="./saveBlog" method="post" enctype="multipart/form-data">
+    <br>
+    标 题： <input type="text" name="title"><br><br>
+    <span style="position: relative;top: -200px">内 容：</span><textarea name="content" rows="15" cols="35"></textarea><br><br>
+
+    <span style="padding-left:80px"/>图 片： <input type="file" name="picture"> <br><br>
+    是 否 发 布： <input id="no" type="radio" name="status" value="0" checked ><label for="no">否</label>
+    <input id="yes" type="radio" name="status" value="1"><label for="yes">是</label><br><br>
+    <div class="input-box">
+      <input type="submit" value=" 提 交 信 息">
+    </div>
+    <div style="padding-top:1em;padding-left:150px;font-size:0.9em;color: #EEEEEE"><b><a href="./index.html" >回到首页</a></b></div>
+  </form>
+</body>
+</html>
