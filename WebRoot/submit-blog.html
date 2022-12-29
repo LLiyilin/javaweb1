@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Book Store</title>
+</head>
+<body>
+  <center>
+    <div style="margin-top:5em; padding: 2em;text-align:center; width:60%; background-color:#EEEEEE">
+      <h2>新增博客</h2>
+      <form action="./saveBlog" method="post" enctype="multipart/form-data">
+
+        标 题： <input type="text" name="title"><br><br>
+        <span style="position: relative;top: -310px">内 容：</span><textarea name="content" rows="22" cols="21"></textarea><br><br>
+
+        <span style="padding-left:80px"/>图 片： <input type="file" name="picture"> <br><br>
+        是 否 发 布： <input id="no" type="radio" name="status" value="0" checked ><label for="no">否</label>
+        <input id="yes" type="radio" name="status" value="1"><label for="yes">是</label><br><br>
+
+        <input type="submit" value=" 提 交 信 息">
+
+      </form>
+    </div>
+    <br><br>
+    <div style="padding-right:3em"><a href="./admin.html">返 回 首 页</a></div>
+  </center>
+</body>
+</html>
